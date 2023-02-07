@@ -35,4 +35,5 @@ def ask():
     return jsonify(ans)
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    ssl_context = ('/etc/letsencrypt/live/api.daveyonkers.com/fullchain.pem', '/etc/letsencrypt/live/api.daveyonkers.com/privkey.pem')
+    app.run(debug=True, host="0.0.0.0", port='443', ssl_context=ssl_context)
